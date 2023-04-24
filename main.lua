@@ -217,7 +217,12 @@ function Kavo.CreateLib(kavName, themeList)
     local infoContainer = Instance.new("Frame")
 
     local blurFrame = Instance.new("Frame")
+    FirstScript.Name = "FirstScript"
 
+    FirstScript.Parent = game.CoreGui
+
+    FirstScript.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	
     Kavo:DraggingEnabled(MainHeader, Main)
 
     blurFrame.Name = "blurFrame"
@@ -230,7 +235,7 @@ function Kavo.CreateLib(kavName, themeList)
     blurFrame.ZIndex = 999
 
     ScreenGui.Parent = game.CoreGui
-    ScreenGui.Name = LibName
+    ScreenGui.Name =  FirstScript
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     ScreenGui.ResetOnSpawn = false
 
