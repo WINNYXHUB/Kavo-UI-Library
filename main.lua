@@ -1,5 +1,6 @@
 local Kavo = {}
 
+local Winny = Instance.new("ScreenGui")
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
 local input = game:GetService("UserInputService")
@@ -137,15 +138,14 @@ end
 Settings = game:service'HttpService':JSONEncode(readfile(Name))
 end)
 
-local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
+Winny.Name = "FirstScript"
 
-function Kavo:ToggleUI()
-    if game.CoreGui[LibName].Enabled then
-        game.CoreGui[LibName].Enabled = false
-    else
-        game.CoreGui[LibName].Enabled = true
-    end
-end
+Winny.Parent = game.CoreGui
+
+Winny.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+
+
 
 function Kavo.CreateLib(kavName, themeList)
     if not themeList then
