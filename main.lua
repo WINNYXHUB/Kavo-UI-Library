@@ -137,13 +137,20 @@ end
 Settings = game:service'HttpService':JSONEncode(readfile(Name))
 end)
 
-local LibName = tostring(math.random(1, 100))..tostring(math.random(1,50))..tostring(math.random(1, 100))
+local Winny = Instance.new("ScreenGui")
+
+
+Winny.Name = "FirstScript"
+
+Winny.Parent = game.CoreGui
+
+Winny.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 function Kavo:ToggleUI()
-    if game.CoreGui[LibName].Enabled then
-        game.CoreGui[LibName].Enabled = false
+    if game.CoreGui[Winny].Enabled then
+        game.CoreGui[Winny].Enabled = false
     else
-        game.CoreGui[LibName].Enabled = true
+        game.CoreGui[Winny].Enabled = true
     end
 end
 
